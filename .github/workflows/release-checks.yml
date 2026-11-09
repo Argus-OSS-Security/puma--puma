@@ -3,10 +3,11 @@ name: Release Checks
 # Runs only on release branches (release-v*), whether targeting main or a stable branch
 # (e.g. 7-2-stable). We don't filter by base branch here because the job condition
 # already limits execution to head branches matching release-v*.
-on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     types: [opened, synchronize, reopened]
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true

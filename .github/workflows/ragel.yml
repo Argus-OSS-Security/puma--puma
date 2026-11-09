@@ -1,18 +1,19 @@
 name: ragel
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'ext/**'
-      - '.github/workflows/ragel.yml'
-  pull_request:
-    paths:
-      - 'ext/**'
-      - '.github/workflows/ragel.yml'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'ext/**'
+#       - '.github/workflows/ragel.yml'
+#   pull_request:
+#     paths:
+#       - 'ext/**'
+#       - '.github/workflows/ragel.yml'
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true

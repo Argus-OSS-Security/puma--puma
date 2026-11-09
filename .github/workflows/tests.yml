@@ -1,18 +1,19 @@
 name: Tests
 
-on:
-  push:
-    branches:
-      - main
-      - '*-stable'
-      - 'release-v*'
-    paths-ignore:
-      - '**/*.md'
-  pull_request:
-    paths-ignore:
-      - '**/*.md'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - main
+#       - '*-stable'
+#       - 'release-v*'
+#     paths-ignore:
+#       - '**/*.md'
+#   pull_request:
+#     paths-ignore:
+#       - '**/*.md'
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true

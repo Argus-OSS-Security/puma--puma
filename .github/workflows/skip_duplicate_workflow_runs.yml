@@ -1,18 +1,19 @@
 name: Skip Duplicate Workflow Runs
 
-on:
-  workflow_call:
-    inputs:
-      paths:
-        description: 'A JSON-array with path patterns'
-        default: '[]'
-        required: false
-        type: string
-    outputs:
-      should_skip:
-        description: "The output from the skip_duplicate_runs job"
-        value: ${{ jobs.skip_duplicate_runs.outputs.should_skip }}
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       paths:
+#         description: 'A JSON-array with path patterns'
+#         default: '[]'
+#         required: false
+#         type: string
+#     outputs:
+#       should_skip:
+#         description: "The output from the skip_duplicate_runs job"
+#         value: ${{ jobs.skip_duplicate_runs.outputs.should_skip }}
+# 
 permissions:
   contents: read
 

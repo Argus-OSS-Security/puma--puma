@@ -1,9 +1,10 @@
 name: PR Label Manager
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 * * * *' # hourly
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: '0 * * * *' # hourly
+# 
 permissions:
   contents: read
   pull-requests: write
